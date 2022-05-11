@@ -6,18 +6,23 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/05/10 16:00:24 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/05/11 18:58:00 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
-OBJ_PATH = obj/
+NAME = MyAwesomePhonebook
+
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = megaphone.cpp
-OBJ_NAME = $(SRC:.cpp=.o)
-OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 
+SRC_PATH = src/
+OBJ_PATH = obj/
+
+SRC_NAME = Contact.cpp main.cpp PhoneBook.cpp
+OBJ_NAME = $(SRC_NAME:.cpp=.o)
+
+OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
+SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(OBJ) -o $(NAME)

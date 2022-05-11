@@ -6,17 +6,23 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/05/10 14:33:59 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/05/11 13:57:30 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
-OBJ_PATH = obj/
+
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
-SRC = megaphone.cpp
-OBJ_NAME = $(SRC:.cpp=.o)
+
+SRC_PATH = src/
+OBJ_PATH = obj/
+
+SRC_NAME = megaphone.cpp
+OBJ_NAME = $(SRC_NAME:.cpp=.o)
+
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
+SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 
 $(NAME): $(OBJ)
