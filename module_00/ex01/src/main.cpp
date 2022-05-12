@@ -6,18 +6,62 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:11:26 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/11 19:00:41 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/12 18:28:17 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "PhoneBook.hpp"
+#include "myAwesomePhoneBook.h"
 #include "Contact.hpp"
+#include "PhoneBook.hpp"
 
-int	main(void)
-{
-	Contact	c1(1, "thi", "sig", "ts", "NULL", "076319");
+std::string	getFieldOfContact(std::string message) {
 
-	std::cout << c1.getPhoneNumber() << std::endl;
+	std::string	str;
+
+	std::cout << message;
+	std::cin >> str;
+	return (str);
+}
+
+void	add(PhoneBook *pb) {
+
+	std::string	field[6];
+
+	field[FIRST_NAME] = getFieldOfContact(MSG_FN);
+	field[LAST_NAME] = getFieldOfContact(MSG_LN);
+	field[NICK_NAME] = getFieldOfContact(MSG_NN);
+	field[PHONE_NUMBER] = getFieldOfContact(MSG_PN);
+	field[DARKEST_SECRET] = getFieldOfContact(MSG_DS);
+	for (int i = 0; i < 5; i++) {
+		if (field[i].empty() == 1) {
+			std::cout << MSG_ERR_EMPTY << std::endl;
+			return ;
+		}
+	}
+	Contact	contact(0, field[FIRST_NAME],
+					field[LAST_NAME],
+					field[NICK_NAME],
+					field[DARKEST_SECRET],
+					field[PHONE_NUMBER]);
+	pb->addContact(contact);
+	pb->printContact(0);
+}
+
+int	main(void) {
+
+	PhoneBook	pb;
+	std::string	str;
+
+	while (1 && std::cin.eof() == 0) {
+		std::cout << std::endl << MSG_HELP_HOME << std::endl;
+		if (!(std::cin >> str))
+			return (0);
+		if (str.compare("ADD") == 0)
+			add(&pb);
+		if (str.compare("SEARCH") == 0)
+			std::cout << "search" << std::endl;
+		if (str.compare("EXIT") == 0)
+			return (0);
+	}
 	return (0);
 }

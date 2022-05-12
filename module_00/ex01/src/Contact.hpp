@@ -6,19 +6,20 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:33 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/11 18:59:10 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/12 17:42:52 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
 
-#include <iostream>
+#include "myAwesomePhoneBook.h"
 
 class	Contact {
 
 	public:
 
+	Contact(void);
 	Contact(unsigned int 	index,
 			std::string 	firstName,
 			std::string 	lastName,
@@ -37,12 +38,12 @@ class	Contact {
 
 	private:
 
-	const unsigned int	_index;
-	const std::string	_firstName;
-	const std::string	_lastName;
-	const std::string	_nickName;
-	const std::string	_darkestSecret;
-	const std::string	_phoneNumber;
+	unsigned int	index_;
+	std::string		firstName_;
+	std::string		lastName_;
+	std::string		nickName_;
+	std::string		darkestSecret_;
+	std::string		phoneNumber_;
 	
 };
 #endif

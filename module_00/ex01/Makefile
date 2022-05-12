@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/05/11 18:58:00 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/05/12 17:29:04 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = src/
 OBJ_PATH = obj/
+INC = -Iinc
 
 SRC_NAME = Contact.cpp main.cpp PhoneBook.cpp
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
@@ -25,11 +26,12 @@ OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 $(NAME): $(OBJ)
-	$(CC) $(FLAGS) $(OBJ) -o $(NAME)
+	$(CC) $(FLAGS) $(INC) $(OBJ) -o $(NAME)
+	./$(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.cpp
 	mkdir -p obj/
-	$(CC) $(FLAGS) -o $@ -c $<
+	$(CC) $(FLAGS) $(INC) -o $@ -c $<
 
 all: $(NAME)
 

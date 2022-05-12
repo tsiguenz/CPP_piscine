@@ -6,12 +6,17 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:51 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/11 18:56:08 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/12 17:43:47 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "src/Contact.hpp"
+#include "myAwesomePhoneBook.h"
+#include "Contact.hpp"
 
+Contact::Contact(void){
+
+	return ;
+}
 Contact::Contact(	unsigned int 	index,
 					std::string 	firstName,
 					std::string 	lastName,
@@ -19,12 +24,12 @@ Contact::Contact(	unsigned int 	index,
 					std::string 	darkestSecret,
 					std::string		phoneNumber		
 				): 	
-					_index(index),
-					_firstName(firstName),
-					_lastName(lastName),
-					_nickName(nickName),
-					_darkestSecret(darkestSecret),
-					_phoneNumber(phoneNumber) {
+					index_(index),
+					firstName_(firstName),
+					lastName_(lastName),
+					nickName_(nickName),
+					darkestSecret_(darkestSecret),
+					phoneNumber_(phoneNumber) {
 	return ; 
 }
 
@@ -33,25 +38,25 @@ Contact::~Contact(void) {
 }
 
 int	Contact::getIndex(void) const {
-	return (this->_index);
+	return (this->index_);
 }
 
 std::string	Contact::getFirstName(void) const {
-	return (this->_firstName);
+	return (this->firstName_);
 }
 
 std::string	Contact::getLastName(void) const {
-	return (this->_lastName);
+	return (this->lastName_);
 }
 
 std::string	Contact::getNickName(void) const {
-	return (this->_nickName);
+	return (this->nickName_);
 }
 
 std::string	Contact::getDarkestSecret(void) const {
-	return (this->_darkestSecret);
+	return (this->darkestSecret_);
 }
 
 std::string	Contact::getPhoneNumber(void) const {
-	return (this->_phoneNumber);
+	return (this->phoneNumber_);
 }
