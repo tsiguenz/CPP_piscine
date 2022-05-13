@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:11:26 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/12 18:28:17 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/13 11:54:24 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,13 +38,22 @@ void	add(PhoneBook *pb) {
 			return ;
 		}
 	}
-	Contact	contact(0, field[FIRST_NAME],
+	Contact	contact(field[FIRST_NAME],
 					field[LAST_NAME],
 					field[NICK_NAME],
 					field[DARKEST_SECRET],
 					field[PHONE_NUMBER]);
 	pb->addContact(contact);
-	pb->printContact(0);
+}
+
+void	search(PhoneBook pb) {
+
+	int	index;
+
+	pb.printContactsResume();
+	std::cout << "Select an index for see details : ";
+	std::cin >> index;
+	pb.printContactByIndex(index);
 }
 
 int	main(void) {
@@ -59,7 +68,7 @@ int	main(void) {
 		if (str.compare("ADD") == 0)
 			add(&pb);
 		if (str.compare("SEARCH") == 0)
-			std::cout << "search" << std::endl;
+			search(pb);
 		if (str.compare("EXIT") == 0)
 			return (0);
 	}

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:51 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/12 17:43:47 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/13 10:56:52 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,18 @@ Contact::Contact(void){
 
 	return ;
 }
-Contact::Contact(	unsigned int 	index,
-					std::string 	firstName,
+Contact::Contact(	std::string 	firstName,
 					std::string 	lastName,
 					std::string 	nickName, 
 					std::string 	darkestSecret,
 					std::string		phoneNumber		
 				): 	
-					index_(index),
 					firstName_(firstName),
 					lastName_(lastName),
 					nickName_(nickName),
 					darkestSecret_(darkestSecret),
 					phoneNumber_(phoneNumber) {
+	this->index_ = 0;
 	return ; 
 }
 
@@ -39,6 +38,11 @@ Contact::~Contact(void) {
 
 int	Contact::getIndex(void) const {
 	return (this->index_);
+}
+
+void	Contact::setIndex(unsigned int index) {
+	this->index_ = index;
+	return ;
 }
 
 std::string	Contact::getFirstName(void) const {
