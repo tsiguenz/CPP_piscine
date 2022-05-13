@@ -6,14 +6,14 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/05/12 17:29:04 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/05/13 19:05:08 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = MyAwesomePhonebook
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = src/
 OBJ_PATH = obj/
@@ -27,7 +27,6 @@ SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 
 $(NAME): $(OBJ)
 	$(CC) $(FLAGS) $(INC) $(OBJ) -o $(NAME)
-	./$(NAME)
 
 $(OBJ_PATH)%.o: $(SRC_PATH)%.cpp
 	mkdir -p obj/

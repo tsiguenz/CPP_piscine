@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:04 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/13 11:56:03 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/13 19:08:25 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,11 @@ PhoneBook::PhoneBook(void) {
 }
 
 PhoneBook::~PhoneBook(void) {}
+
+int		PhoneBook::getNbContact(void) {
+
+	return (this->nbContact_);
+}
 
 void	PhoneBook::addContact(Contact contact) {
 
@@ -37,12 +42,12 @@ void	PhoneBook::addContact(Contact contact) {
 
 void	PhoneBook::shiftContacts(void) {
 
-	for (int i = NB_CONTACT_MAX - 1; i >= 0; i--) {
+	for (int i = NB_CONTACT_MAX - 1; i > 0; i--) {
 		contacts_[i - 1] = contacts_[i];
 	}
 }
 
-void	PhoneBook::printContactByIndex(int index) {
+void	PhoneBook::printContactByIndex(int index) const {
 
 	index--;
 	std::cout << "----------------------------------------" << std::endl;
@@ -54,7 +59,28 @@ void	PhoneBook::printContactByIndex(int index) {
 	std::cout << MSG_DS << this->contacts_[index].getDarkestSecret() << std::endl;
 	std::cout << "----------------------------------------" << std::endl;
 }
+
 void	PhoneBook::printContactsResume(void) {
 
-	std::cout << (this->contacts_[0].getFirstName()).substr(0, 10) << std::endl;
+	Contact		contact;
+	std::string	str;
+
+	std::cout << MSG_HEADER_DETAIL << std::endl;
+	for (int i = 0; i < this->nbContact_; i++) {
+		contact = this->contacts_[i];
+		std::cout << "         " << contact.getIndex() << "|";
+		str.append(getFieldFormatedForResume(contact.getFirstName()));
+		str.append(getFieldFormatedForResume(contact.getLastName()));
+		str.append(getFieldFormatedForResume(contact.getNickName()));
+		str.resize(str.size() - 1);
+		std::cout << str << std::endl;
+		str.clear();
+	}
+}
+
+std::string	PhoneBook::getFieldFormatedForResume(std::string field) const {
+
+	if (field.size() > 10)
+		return (field.substr(0, 9).append(".|"));
+	return (field.append("|").insert(0, 11 - field.size(), ' '));
 }
