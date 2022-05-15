@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:09:47 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/13 19:05:55 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/15 22:31:41 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,17 @@ class PhoneBook {
 
 	PhoneBook(void); 
     ~PhoneBook(void);
-	int			getNbContact(void);
-	void		addContact(Contact contact);
+
+// member
+	int			getNbContact(void) const;
 	void		shiftContacts(void);
 	void		printContactByIndex(int index) const;
-	void		printContactsResume(void);
+	void		printContactsResume(void) const;
 	std::string	getFieldFormatedForResume(std::string str) const;
+	void		add(void);
+	void		addContact(Contact contact);
+	std::string	getFieldOfContact(std::string message) const;
+	void		search(void) const;
 
 	private:
 

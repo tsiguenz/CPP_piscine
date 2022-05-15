@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:04 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/13 19:08:25 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/15 22:31:52 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,42 @@ PhoneBook::PhoneBook(void) {
 
 PhoneBook::~PhoneBook(void) {}
 
-int		PhoneBook::getNbContact(void) {
+int		PhoneBook::getNbContact(void) const {
 
 	return (this->nbContact_);
+}
+
+void	PhoneBook::add(void) {
+
+	std::string	field[6];
+
+	field[FIRST_NAME] = getFieldOfContact(MSG_FN);
+	field[LAST_NAME] = getFieldOfContact(MSG_LN);
+	field[NICK_NAME] = getFieldOfContact(MSG_NN);
+	field[PHONE_NUMBER] = getFieldOfContact(MSG_PN);
+	field[DARKEST_SECRET] = getFieldOfContact(MSG_DS);
+	for (int i = 0; i < 5; i++)
+		if (field[i].empty() == 1)
+			return ;
+	Contact	contact(field[FIRST_NAME],
+					field[LAST_NAME],
+					field[NICK_NAME],
+					field[DARKEST_SECRET],
+					field[PHONE_NUMBER]);
+	addContact(contact);
+}
+
+std::string	PhoneBook::getFieldOfContact(std::string message) const{
+
+	std::string	str;
+
+	if (std::cin.good() == 0)
+		return (str);
+	std::cout << message;
+	std::getline(std::cin, str);
+	if (str.empty() == 1)
+		std::cout << MSG_ERR_EMPTY << std::endl;
+	return (str);
 }
 
 void	PhoneBook::addContact(Contact contact) {
@@ -38,6 +71,30 @@ void	PhoneBook::addContact(Contact contact) {
 		shiftContacts();
 		this->contacts_[0] = contact;
 	}
+}
+
+void	PhoneBook::search(void) const {
+
+	int	index = 0;
+
+	if (this->nbContact_ == 0) {
+			std::cout << MSG_SEARCH_BUT_NO_CONTACT << std::endl;
+			return ;
+	}
+	printContactsResume();
+	while (1) {
+		std::cout << MSG_DETAIL;
+		std::cin >> index;
+		if (std::cin.eof() == 1)
+			return ;
+		if (std::cin.good() == 0 || index < 1 || index > this->nbContact_) {
+			std::cout << MSG_ERR_BAD_FORMAT_INDEX << this->nbContact_ << std::endl;
+			std::cin.clear();
+			ignoreLine();
+		} else break ;
+	}
+	ignoreLine();
+	printContactByIndex(index);
 }
 
 void	PhoneBook::shiftContacts(void) {
@@ -60,7 +117,7 @@ void	PhoneBook::printContactByIndex(int index) const {
 	std::cout << "----------------------------------------" << std::endl;
 }
 
-void	PhoneBook::printContactsResume(void) {
+void	PhoneBook::printContactsResume(void) const {
 
 	Contact		contact;
 	std::string	str;

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 17:12:42 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/13 18:16:01 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/15 22:19:47 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ enum	e_fields {
 	DARKEST_SECRET
 };
 
+void	ignoreLine(void);
 #endif
