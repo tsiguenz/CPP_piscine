@@ -1,30 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/09 17:55:39 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/16 15:06:01 by tsiguenz         ###   ########.fr       */
+/*   Created: 2022/05/16 15:08:44 by tsiguenz          #+#    #+#             */
+/*   Updated: 2022/05/16 18:14:01 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Account.hpp"
+#include <vector>
+#include <algorithm>
+#include <functional>
 
-int	main(int ac, char **av)
-{
-	std::string	str;
+int	main(void) {
 
-	if (ac == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	for (int i = 1; i < ac; i++)
-	{
-		str = av[i];
-		for (size_t y = 0; y < str.size(); y++)
-			str.at(y) = std::toupper(str.at(y));
-		std::cout << str;
-	}
-	std::cout << std::endl;
+	Account	a(100);
+	
+	a.displayStatus();
+	a.makeDeposit(500);
+	a.displayStatus();
 	return (0);
 }

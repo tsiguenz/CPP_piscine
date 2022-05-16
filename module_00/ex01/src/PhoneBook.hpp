@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:09:47 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/15 22:31:41 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/16 13:32:06 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include "myAwesomePhoneBook.h"
 #include "Contact.hpp"
 #include "PhoneBook.hpp"
-#define NB_CONTACT_MAX 1
+#define NB_CONTACT_MAX 8
 
 class PhoneBook {
 
@@ -25,7 +25,6 @@ class PhoneBook {
 	PhoneBook(void); 
     ~PhoneBook(void);
 
-// member
 	int			getNbContact(void) const;
 	void		shiftContacts(void);
 	void		printContactByIndex(int index) const;
@@ -40,6 +39,7 @@ class PhoneBook {
 
 	Contact	contacts_[NB_CONTACT_MAX];
 	int		nbContact_;
+	int		indexOldestContact_;
 };
 
 #endif

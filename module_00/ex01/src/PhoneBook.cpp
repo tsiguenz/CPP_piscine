@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:04 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/15 22:31:52 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/16 13:41:13 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 PhoneBook::PhoneBook(void) {
 
 	this->nbContact_ = 0;
+	this->indexOldestContact_ = 0;
 }
 
 PhoneBook::~PhoneBook(void) {}
@@ -35,9 +36,12 @@ void	PhoneBook::add(void) {
 	field[NICK_NAME] = getFieldOfContact(MSG_NN);
 	field[PHONE_NUMBER] = getFieldOfContact(MSG_PN);
 	field[DARKEST_SECRET] = getFieldOfContact(MSG_DS);
-	for (int i = 0; i < 5; i++)
-		if (field[i].empty() == 1)
+	for (int i = 0; i < 5; i++) {
+		if (field[i].empty() == 1) {
+			std::cout << MSG_ERR_EMPTY << std::endl;
 			return ;
+		}
+	}
 	Contact	contact(field[FIRST_NAME],
 					field[LAST_NAME],
 					field[NICK_NAME],
@@ -46,7 +50,7 @@ void	PhoneBook::add(void) {
 	addContact(contact);
 }
 
-std::string	PhoneBook::getFieldOfContact(std::string message) const{
+std::string	PhoneBook::getFieldOfContact(std::string message) const {
 
 	std::string	str;
 
@@ -54,8 +58,6 @@ std::string	PhoneBook::getFieldOfContact(std::string message) const{
 		return (str);
 	std::cout << message;
 	std::getline(std::cin, str);
-	if (str.empty() == 1)
-		std::cout << MSG_ERR_EMPTY << std::endl;
 	return (str);
 }
 
@@ -63,13 +65,16 @@ void	PhoneBook::addContact(Contact contact) {
 
 	if (nbContact_ != NB_CONTACT_MAX) {
 		this->nbContact_++;
-		contact.setIndex(this->nbContact_);
+		contact.setIndex(this->nbContact_ - 1);
 		this->contacts_[this->nbContact_ - 1] = contact;
 	} 
 	else {
-		contact.setIndex(1);
-		shiftContacts();
-		this->contacts_[0] = contact;
+		contact.setIndex(this->indexOldestContact_);
+		this->contacts_[this->indexOldestContact_] = contact;
+		if (this->indexOldestContact_ == NB_CONTACT_MAX - 1)
+			this->indexOldestContact_ = 0;
+		else
+			this->indexOldestContact_++;
 	}
 }
 
@@ -87,8 +92,8 @@ void	PhoneBook::search(void) const {
 		std::cin >> index;
 		if (std::cin.eof() == 1)
 			return ;
-		if (std::cin.good() == 0 || index < 1 || index > this->nbContact_) {
-			std::cout << MSG_ERR_BAD_FORMAT_INDEX << this->nbContact_ << std::endl;
+		if (std::cin.good() == 0 || index < 0 || index > this->nbContact_ - 1) {
+			std::cout << MSG_ERR_BAD_FORMAT_INDEX << this->nbContact_ - 1 << std::endl;
 			std::cin.clear();
 			ignoreLine();
 		} else break ;
@@ -97,16 +102,8 @@ void	PhoneBook::search(void) const {
 	printContactByIndex(index);
 }
 
-void	PhoneBook::shiftContacts(void) {
-
-	for (int i = NB_CONTACT_MAX - 1; i > 0; i--) {
-		contacts_[i - 1] = contacts_[i];
-	}
-}
-
 void	PhoneBook::printContactByIndex(int index) const {
 
-	index--;
 	std::cout << "----------------------------------------" << std::endl;
 	std::cout << MSG_IN << this->contacts_[index].getIndex() << std::endl;
 	std::cout << MSG_FN << this->contacts_[index].getFirstName() << std::endl;
