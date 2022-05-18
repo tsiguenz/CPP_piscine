@@ -6,11 +6,11 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/05/18 18:37:28 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/05/18 18:46:27 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = BraiiiiiiinnnzzzZ
+NAME = Brain
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98
@@ -19,7 +19,7 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 INC = -Iinc
 
-SRC_NAME = main.cpp Zombie.cpp newZombie.cpp randomChump.cpp
+SRC_NAME = main.cpp
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))

@@ -1,0 +1,6 @@
+Brain
+obj
+*.swp
+tags
+*.d
+*.depend
