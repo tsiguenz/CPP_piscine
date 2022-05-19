@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:09:47 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/16 13:32:06 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/18 15:36:13 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 
 class PhoneBook {
 
-	public:
+public:
 
 	PhoneBook(void); 
     ~PhoneBook(void);
@@ -35,7 +35,7 @@ class PhoneBook {
 	std::string	getFieldOfContact(std::string message) const;
 	void		search(void) const;
 
-	private:
+private:
 
 	Contact	contacts_[NB_CONTACT_MAX];
 	int		nbContact_;

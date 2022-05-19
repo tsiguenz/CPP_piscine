@@ -1,0 +1,6 @@
+Horde
+obj
+*.swp
+tags
+*.d
+*.depend

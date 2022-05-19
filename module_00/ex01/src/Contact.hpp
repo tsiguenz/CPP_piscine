@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:33 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/16 13:19:01 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/18 15:36:06 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 class	Contact {
 
-	public:
+public:
 
 	Contact(void);
 	Contact(std::string 	firstName,
@@ -36,7 +36,7 @@ class	Contact {
 	std::string	getDarkestSecret(void) const;
 	std::string	getPhoneNumber(void) const;
 
-	private:
+private:
 
 	unsigned int	index_;
 	std::string		firstName_;
