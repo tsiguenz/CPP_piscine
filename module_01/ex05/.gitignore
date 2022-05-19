@@ -1,0 +1,6 @@
+harl
+obj
+*.swp
+tags
+*.d
+*.depend
