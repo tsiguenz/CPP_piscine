@@ -1,27 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/18 23:05:01 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/19 10:05:33 by tsiguenz         ###   ########.fr       */
+/*   Created: 2022/05/19 16:43:11 by tsiguenz          #+#    #+#             */
+/*   Updated: 2022/05/20 16:07:46 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include <iostream>
+#include "Harl.hpp"
 
-HumanA::HumanA(std::string name, Weapon& weapon): name_(name), weapon_(weapon) {
-	return ;
-}
+int	main(int ac, char **av) {
+	Harl	harl;
 
-HumanA::~HumanA(void) {
-	return ;
-}
-
-void	HumanA::attack(void) const {
-
-	std::cout 	<< this->name_ << " attacks with their " 
-				<< this->weapon_.getType() << std::endl;
+	if (ac != 2) {
+		std::cerr << "Bad number of parameters" << std::endl;
+		return (1);
+	}
+	harl.complain(av[1]);
+	return (0);
 }
