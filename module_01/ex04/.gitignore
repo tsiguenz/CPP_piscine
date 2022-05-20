@@ -1,0 +1,7 @@
+sed
+file.replace
+obj
+*.swp
+tags
+*.d
+*.depend

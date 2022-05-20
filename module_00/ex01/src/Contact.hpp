@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:33 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/18 15:36:06 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:49:15 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,5 @@ private:
 	std::string		phoneNumber_;
 	
 };
+
 #endif

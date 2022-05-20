@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 11:10:51 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/13 10:56:52 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/19 09:46:55 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 #include "Contact.hpp"
 
 Contact::Contact(void){
-
 	return ;
 }
+
 Contact::Contact(	std::string 	firstName,
 					std::string 	lastName,
 					std::string 	nickName, 

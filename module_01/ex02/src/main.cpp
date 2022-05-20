@@ -6,14 +6,13 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 18:44:30 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/18 18:55:40 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/19 10:07:17 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 
 int	main(void) {
-
 	std::string		str("HI THIS IS BRAIN");
 	std::string*	stringPTR = &str;
 	std::string&	stringREF = str;
