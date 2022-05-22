@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 10:13:24 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/19 18:27:50 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/20 18:11:50 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,7 @@ bool	createFileReplaced(std::string const fileContent, std::string fileName) {
 		return (true);
 	}
 	outfile << fileContent;
+	outfile.close();
 	return (false);
 }
 
