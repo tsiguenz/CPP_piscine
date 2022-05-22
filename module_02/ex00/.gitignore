@@ -1,0 +1,6 @@
+canon
+obj
+*.swp
+tags
+*.d
+*.depend
