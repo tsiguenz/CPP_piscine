@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:19:53 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/22 18:47:52 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/23 11:04:16 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ public:
 
 private:
 	int					value_;
-	static int const	nbBits_ = 8;
+	static int const	nbBitsFractPart_ = 8;
 };
 
 #endif // FIXED_HPP
