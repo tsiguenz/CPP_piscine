@@ -1,0 +1,6 @@
+BSP
+obj
+*.swp
+tags
+*.d
+*.depend
