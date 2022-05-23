@@ -1,0 +1,6 @@
+useful
+obj
+*.swp
+tags
+*.d
+*.depend

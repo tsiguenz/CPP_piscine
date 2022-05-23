@@ -1,0 +1,6 @@
+we_can_talk
+obj
+*.swp
+tags
+*.d
+*.depend
