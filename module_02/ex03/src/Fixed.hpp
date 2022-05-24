@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:19:53 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/23 18:17:32 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/24 23:05:08 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ public:
 	bool	operator<=(Fixed const& fixed) const;
 	bool	operator==(Fixed const& fixed) const;
 	bool	operator!=(Fixed const& fixed) const;
-	float	operator+(Fixed const& fixed) const;
-	float	operator-(Fixed const& fixed) const;
-	float	operator*(Fixed const& fixed) const;
-	float	operator/(Fixed const& fixed) const;
+	Fixed	operator+(Fixed const& fixed) const;
+	Fixed	operator-(Fixed const& fixed) const;
+	Fixed	operator*(Fixed const& fixed) const;
+	Fixed	operator/(Fixed const& fixed) const;
 	Fixed	operator++(int);
 	Fixed&	operator++(void);
 	Fixed	operator--(int);
@@ -51,6 +51,7 @@ public:
 	static Fixed&	max(Fixed& a, Fixed& b);
 	static Fixed const&	min(Fixed const& a, Fixed const& b);
 	static Fixed const&	max(Fixed const& a, Fixed const& b);
+	static Fixed	abs(Fixed const& fixed) ;
 
 private:
 	int					rawBits_;

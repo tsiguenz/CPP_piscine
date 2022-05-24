@@ -6,20 +6,20 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/05/23 18:40:14 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/05/24 22:14:18 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = BSP
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = src/
 OBJ_PATH = obj/
 INC = -Iinc
 
-SRC_NAME = main.cpp Fixed.cpp Point.cpp
+SRC_NAME = main.cpp Fixed.cpp Point.cpp bsp.cpp
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))

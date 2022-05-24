@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:18:59 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/23 17:36:40 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/24 21:17:38 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	test(int const val1, int const val2, std::string const str) {
 	}
 }
 
-void	test(float const val1, float const val2, std::string const str) {
+void	test(Fixed const val1, float const val2, std::string const str) {
 	if (val1 == val2) {
 		std::cout << GREEN << "[OK] " << str << RESET << std::endl;
 	}
@@ -52,10 +52,10 @@ int	main(void) {
 	test(Fixed(5.5f) * Fixed(2), 11.f, "5.5 * 2 == 11");
 	test(Fixed(5.5f) / Fixed(2), 2.75, "5.5 / 2 == 2.75");
 
-	test(Fixed::min(Fixed(5.5f), Fixed(2)).toInt(), 2, "min(5.5, 2) == 2");
-	test(Fixed::min(Fixed(2), Fixed(2)).toInt(), 2, "min(5.5, 2) == 2");
-	test(Fixed::max(Fixed(5.5f), Fixed(2)).toFloat(), 5.5f, "min(5.5, 2) == 5.5");
-	test(Fixed::max(Fixed(5.5f), Fixed(5.5f)).toFloat(), 5.5f, "min(5.5, 2) == 5.5");
+	test(Fixed::min(Fixed(5.5f), Fixed(2)), 2.0f, "min(5.5, 2) == 2");
+	test(Fixed::min(Fixed(2), Fixed(2)), 2.0f, "min(5.5, 2) == 2");
+	test(Fixed::max(Fixed(5.5f), Fixed(2)), 5.5f, "min(5.5, 2) == 5.5");
+	test(Fixed::max(Fixed(5.5f), Fixed(5.5f)), 5.5f, "min(5.5, 2) == 5.5");
 
 	std::cout << std::endl << "Subject tests :" << std::endl << std::endl;
 
