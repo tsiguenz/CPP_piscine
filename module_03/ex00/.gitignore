@@ -1,0 +1,6 @@
+action
+obj
+*.swp
+tags
+*.d
+*.depend
