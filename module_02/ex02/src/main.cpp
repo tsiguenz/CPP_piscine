@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/22 18:18:59 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/24 21:17:38 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/25 10:12:58 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,9 @@ void	test(Fixed const val1, float const val2, std::string const str) {
 }
 
 int	main(void) {
+	Fixed	f1, f2;
+	f1 = f2 = (2.225f + 7.775f + 10 - 10) * 1.5f / 3;
+
 	std::cout << "My tests :" << std::endl << std::endl;
 
 	test(Fixed(-0.1f) < Fixed(0.1f), 1, "-0.1 < 0.1 == true");
@@ -56,6 +59,9 @@ int	main(void) {
 	test(Fixed::min(Fixed(2), Fixed(2)), 2.0f, "min(5.5, 2) == 2");
 	test(Fixed::max(Fixed(5.5f), Fixed(2)), 5.5f, "min(5.5, 2) == 5.5");
 	test(Fixed::max(Fixed(5.5f), Fixed(5.5f)), 5.5f, "min(5.5, 2) == 5.5");
+
+	test(f1, 5, "f1 = 5");
+	test(f2, 5, "f2 = 5");
 
 	std::cout << std::endl << "Subject tests :" << std::endl << std::endl;
 
