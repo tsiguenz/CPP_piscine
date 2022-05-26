@@ -1,0 +1,6 @@
+serena
+obj
+*.swp
+tags
+*.d
+*.depend

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 18:31:01 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/25 14:17:04 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/26 10:44:33 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ bool	areCollinear(Point const a, Point const b, Point const c) {
 }
 
 Fixed const	area(Point const a, Point const b, Point const c) {
-	Fixed	ret = (((a.getX() * (b.getY() - c.getY())) + 
-					(b.getX() * (c.getY() - a.getY())) + 
+	Fixed	ret = (((a.getX() * (b.getY() - c.getY())) +
+					(b.getX() * (c.getY() - a.getY())) +
 					(c.getX() * (a.getY() - b.getY()))) / 2);
 
 	return (Fixed::abs(ret));
@@ -31,10 +31,10 @@ Fixed const	area(Point const a, Point const b, Point const c) {
 bool	bsp(Point const a, Point const b, Point const c, Point const point) {
 	if (areCollinear(a, b, point) || areCollinear(a, c, point) || areCollinear(c, b, point))
 		return (0);
-	Fixed	areaABC = area(a, b, c); 
+	Fixed	areaABC = area(a, b, c);
 	Fixed	areaPAB = area(point, a, b);
-	Fixed	areaPBC = area(point, b, c);; 
-	Fixed	areaPAC = area(point, a, c);; 
+	Fixed	areaPBC = area(point, b, c);
+	Fixed	areaPAC = area(point, a, c);
 
 // debug
 //	std::cout << "Px = " << point.getX() << " Py = " <<  point.getY() << std::endl;

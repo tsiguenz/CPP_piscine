@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:00:14 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 12:25:57 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/26 12:42:24 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,10 @@ public:
 	int		getHitPoint(void) const;
 	int		getEnergyPoint(void) const;
 	int		getAttackDamage(void) const;
+	void	setName(std::string name);
+	void	setHitPoint(int hitPoint);
+	void	setEnergyPoint(int energyPoint);
+	void	setAttackDamage(int attackDamage);
 	void	attack(std::string const& target);
 	void	takeDamage(unsigned int amount);
 	void	beRepaired(unsigned int amount);
