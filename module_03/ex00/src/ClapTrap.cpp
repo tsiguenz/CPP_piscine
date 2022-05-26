@@ -6,13 +6,14 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:00:14 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 12:25:46 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:06:35 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
 ClapTrap::ClapTrap(void): name_(""), hitPoint_(10), energyPoint_(10), attackDamage_(0) {
+	std::cout << "default constructor" << std::endl;
 	return ;
 }
 
@@ -122,4 +123,12 @@ void	ClapTrap::printRepairedFail(void) const {
 	std::cout 	<< "ClapTrap " << this->name_ << " can't repaired, he is dead"
 				<< std::endl;
 	return ;
+}
+
+std::ostream&	operator<<(std::ostream& os, ClapTrap const& claptrap) {
+	os << "name : " << claptrap.getName();
+	os << ", HP : " << claptrap.getHitPoint();
+	os << ", EP : " << claptrap.getEnergyPoint();
+	os << ", AD : " << claptrap.getAttackDamage();
+	return os;
 }

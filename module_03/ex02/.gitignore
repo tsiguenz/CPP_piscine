@@ -1,0 +1,6 @@
+work
+obj
+*.swp
+tags
+*.d
+*.depend

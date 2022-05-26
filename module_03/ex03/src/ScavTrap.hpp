@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 16:09:08 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/26 17:59:26 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <iostream>
 # include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap {
+class ScavTrap : virtual public ClapTrap {
 
 public:
 	ScavTrap(void);

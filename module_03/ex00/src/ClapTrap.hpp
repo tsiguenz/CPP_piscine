@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:00:14 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 12:25:57 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/26 16:04:38 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,7 @@ private:
 	int			attackDamage_;
 
 };
+
+std::ostream&	operator<<(std::ostream& os, ClapTrap const&);
 
 #endif // CLAPTRAP_HPP
