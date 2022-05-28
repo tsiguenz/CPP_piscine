@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:51:32 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 17:50:24 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/28 03:33:12 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
 	DiamondTrap(DiamondTrap const& diamondtrap);
 	~DiamondTrap(void);
 	DiamondTrap& operator=(DiamondTrap const& diamondtrap);
+	std::string	getName(void) const;
+	void	whoAmi(void);
 
 private:
 	std::string	name_;

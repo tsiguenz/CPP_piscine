@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:18:35 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 17:59:14 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/28 03:43:52 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 FragTrap::FragTrap(void) {
 	std::cout << "FragTrap default constructor" << std::endl;
-	this->setHitPoint(100);
-	this->setEnergyPoint(100);
-	this->setAttackDamage(30);
+	this->hitPoint_ = 100;
+	this->energyPoint_ = 100;
+	this->attackDamage_ = 30;
 	return ;
 }
 
 FragTrap::FragTrap(std::string const& name) {
 	std::cout << "FragTrap constructor by name" << std::endl;
-	this->setName(name);
-	this->setHitPoint(100);
-	this->setEnergyPoint(100);
-	this->setAttackDamage(30);
+	this->name_ = name;
+	this->hitPoint_ = 100;
+	this->energyPoint_ = 100;
+	this->attackDamage_ = 30;
 	return ;
 }
 
-FragTrap::FragTrap(FragTrap const& fragtrap) {
+FragTrap::FragTrap(FragTrap const& fragtrap): ClapTrap(fragtrap) {
 	std::cout << "FragTrap copy constructor" << std::endl;
 	*this = fragtrap;
 	return ;
@@ -42,14 +42,18 @@ FragTrap::~FragTrap(void) {
 
 FragTrap&	FragTrap::operator=(FragTrap const& fragtrap) {
 	std::cout << "FragTrap overload assigment" << std::endl;
-	this->setName(fragtrap.getName());
-	this->setHitPoint(fragtrap.getHitPoint());
-	this->setEnergyPoint(fragtrap.getEnergyPoint());
-	this->setAttackDamage(fragtrap.getAttackDamage());
+	this->name_ = fragtrap.name_;
+	this->hitPoint_ = fragtrap.hitPoint_;
+	this->energyPoint_ = fragtrap.energyPoint_;
+	this->attackDamage_ = fragtrap.attackDamage_;
 	return *this;
 }
 
 void	FragTrap::highFivesGuys(void) {
-	std::cout << "FragTrap " << this->getName() << " want to high five " << std::endl;
+	if (this->energyPoint_ <= 0 || this->hitPoint_ <= 0) {
+		std::cout << "FragTrap " << this->name_ << " can't high five, he is dead" << std::endl;
+		return ;
+	}
+	std::cout << "FragTrap " << this->name_ << " want to high five " << std::endl;
 	return ;
 }

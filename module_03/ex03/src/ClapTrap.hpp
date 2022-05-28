@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:00:14 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 15:36:02 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/28 03:31:48 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ public:
 	void		printRepairedSucces(unsigned int const amount) const;
 	void		printRepairedFail(void) const;
 
-private:
+protected:
 	std::string	name_;
 	int			hitPoint_;
 	int			energyPoint_;
