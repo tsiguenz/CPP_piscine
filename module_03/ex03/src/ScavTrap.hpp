@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 17:59:26 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/28 17:37:32 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,10 @@ public:
 	void	printGuardGateSucces(void) const;
 	void	printGuardGateFail(void) const;
 	void	guardGate(void);
+	void	setDefaultEnergyPoint(void);
 
 private:
 
 };
-
-std::ostream&	operator<<(std::ostream& os, ClapTrap const&);
 
 #endif // SCAVTRAP_HPP

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:18:35 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/28 03:32:40 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/28 17:36:55 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ public:
 	~FragTrap(void);
 	FragTrap& operator=(FragTrap const& fragtrap);
 	void	highFivesGuys(void);
+	void	setDefaultHitPoint(void);
+	void	setDefaultAttackDamage(void);
 
 private:
 

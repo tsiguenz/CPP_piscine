@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/28 03:52:37 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/28 17:38:35 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,18 @@
 
 ScavTrap::ScavTrap(void) {
 	std::cout << "ScavTrap default constructor" << std::endl;
-	this->hitPoint_ = 100;
-	this->energyPoint_ = 50;
-	this->attackDamage_ = 20;
+	this->setHitPoint(100);
+	this->setEnergyPoint(50);
+	this->setAttackDamage(20);
 	return ;
 }
 
 ScavTrap::ScavTrap(std::string const& name) {
 	std::cout << "ScavTrap constructor by name" << std::endl;
-	this->name_ = name;
-	this->hitPoint_ = 100;
-	this->energyPoint_ = 50;
-	this->attackDamage_ = 20;
+	this->setName(name);
+	this->setHitPoint(100);
+	this->setEnergyPoint(50);
+	this->setAttackDamage(20);
 	return ;
 }
 
@@ -42,27 +42,27 @@ ScavTrap::~ScavTrap(void) {
 
 ScavTrap&	ScavTrap::operator=(ScavTrap const& scavtrap) {
 	std::cout << "ScavTrap overload assigment" << std::endl;
-	this->name_ = scavtrap.name_;
-	this->hitPoint_ = scavtrap.hitPoint_;
-	this->energyPoint_ = scavtrap.energyPoint_;
-	this->attackDamage_ = scavtrap.attackDamage_;
+	this->setName(scavtrap.getName());
+	this->setHitPoint(scavtrap.getHitPoint());
+	this->setEnergyPoint(scavtrap.getEnergyPoint());
+	this->setAttackDamage(scavtrap.getAttackDamage());
 	return *this;
 }
 
 void	ScavTrap::printAttackSucces(std::string const target) const {
-	std::cout 	<< "ScavTrap " << this->name_ << " attacks " << target
-				<< " causing " << this->attackDamage_ << " point of damage"
+	std::cout 	<< "ScavTrap " << this->getName() << " attacks " << target
+				<< " causing " << this->getAttackDamage() << " point of damage"
 				<< std::endl;
 }
 
 void	ScavTrap::printAttackFail(void) const {
-	std::cout 	<< "ScavTrap " << this->name_ << " can't attack, he is dead"
+	std::cout 	<< "ScavTrap " << this->getName() << " can't attack, he is dead"
 				<< std::endl;
 	return ;
 }
 
 void	ScavTrap::guardGate(void) {
-	if (this->hitPoint_ <= 0 || this->energyPoint_ <= 0) {
+	if (this->getHitPoint() <= 0 || this->getEnergyPoint() <= 0) {
 		this->printGuardGateFail();
 		return ;
 	}
@@ -71,13 +71,18 @@ void	ScavTrap::guardGate(void) {
 }
 
 void	ScavTrap::printGuardGateSucces(void) const {
-	std::cout	<< "ScavTrap " << this->name_ << " enter in Gate Keeper mode"
+	std::cout	<< "ScavTrap " << this->getName() << " enter in Gate Keeper mode"
 				<< std::endl;
 	return ;
 }
 
 void	ScavTrap::printGuardGateFail(void) const {
-	std::cout	<< "ScavTrap " << this->name_ << " can't enter in Gate Keeper mode, "
+	std::cout	<< "ScavTrap " << this->getName() << " can't enter in Gate Keeper mode, "
 				<< "he is dead" << std::endl;
+	return ;
+}
+
+void	ScavTrap::setDefaultEnergyPoint(void) {
+	this->setEnergyPoint(50);
 	return ;
 }
