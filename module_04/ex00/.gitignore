@@ -1,0 +1,6 @@
+polymorphism
+obj
+*.swp
+tags
+*.d
+*.depend
