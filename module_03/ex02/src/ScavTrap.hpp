@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 16:09:08 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:05:24 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ public:
 	ScavTrap(ScavTrap const& scavtrap);
 	~ScavTrap(void);
 	ScavTrap& operator=(ScavTrap const& scavtrap);
+	void	attack(std::string const& target);
 	void	printAttackSucces(std::string const target) const;
 	void	printAttackFail(void) const;
 	void	printGuardGateSucces(void) const;

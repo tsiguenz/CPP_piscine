@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:18:35 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 16:35:30 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:12:02 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,11 @@ public:
 	~FragTrap(void);
 	FragTrap& operator=(FragTrap const& fragtrap);
 	void	highFivesGuys(void);
+	void	printHighFiveSucces(void);
+	void	printHighFiveFail(void);
+	void	attack(std::string const& target);
+	void	printAttackSucces(std::string const target) const;
+	void	printAttackFail(void) const;
 
 private:
 

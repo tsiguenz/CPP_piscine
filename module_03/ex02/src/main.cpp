@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 17:00:55 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 16:47:08 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:15:13 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <iostream>
@@ -17,6 +17,7 @@
 int	main(void) {
 	FragTrap	p1("toto");
 
+	p1.highFivesGuys();
 	p1.attack("tata");
 	std::cout << "p1 = " << p1 << std::endl;
 	p1.takeDamage(3);

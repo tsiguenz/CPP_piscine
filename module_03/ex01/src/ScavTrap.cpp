@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/26 15:39:20 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/31 12:05:03 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ ScavTrap&	ScavTrap::operator=(ScavTrap const& scavtrap) {
 	this->setEnergyPoint(scavtrap.getEnergyPoint());
 	this->setAttackDamage(scavtrap.getAttackDamage());
 	return *this;
+}
+
+void	ScavTrap::attack(std::string const& target) {
+	if (this->getEnergyPoint() <= 0 || this->getHitPoint() <= 0) {
+		this->printAttackFail();
+		return ;
+	}
+	this->printAttackSucces(target);
+	this->setEnergyPoint(getEnergyPoint() - 1);
+	return ;
 }
 
 void	ScavTrap::printAttackSucces(std::string const target) const {
