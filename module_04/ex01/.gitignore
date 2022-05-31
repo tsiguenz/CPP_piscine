@@ -1,0 +1,6 @@
+burn
+obj
+*.swp
+tags
+*.d
+*.depend
