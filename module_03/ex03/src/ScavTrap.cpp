@@ -6,30 +6,34 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 10:52:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/28 17:38:35 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:49:18 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
 
+#define DEFAULT_HIT_POINT 100
+#define DEFAULT_ENERGY_POINT 50
+#define DEFAULT_ATTACK_DAMAGE 20
+
 ScavTrap::ScavTrap(void) {
 	std::cout << "ScavTrap default constructor" << std::endl;
-	this->setHitPoint(100);
-	this->setEnergyPoint(50);
-	this->setAttackDamage(20);
+	this->setHitPoint(DEFAULT_HIT_POINT);
+	this->setEnergyPoint(DEFAULT_ENERGY_POINT);
+	this->setAttackDamage(DEFAULT_ATTACK_DAMAGE);
 	return ;
 }
 
 ScavTrap::ScavTrap(std::string const& name) {
 	std::cout << "ScavTrap constructor by name" << std::endl;
 	this->setName(name);
-	this->setHitPoint(100);
-	this->setEnergyPoint(50);
-	this->setAttackDamage(20);
+	this->setHitPoint(DEFAULT_HIT_POINT);
+	this->setEnergyPoint(DEFAULT_ENERGY_POINT);
+	this->setAttackDamage(DEFAULT_ATTACK_DAMAGE);
 	return ;
 }
 
-ScavTrap::ScavTrap(ScavTrap const& scavtrap): ClapTrap(scavtrap) {
+ScavTrap::ScavTrap(ScavTrap const& scavtrap) {
 	std::cout << "ScavTrap copy constructor" << std::endl;
 	*this = scavtrap;
 	return ;
@@ -83,6 +87,16 @@ void	ScavTrap::printGuardGateFail(void) const {
 }
 
 void	ScavTrap::setDefaultEnergyPoint(void) {
-	this->setEnergyPoint(50);
+	this->setEnergyPoint(DEFAULT_ENERGY_POINT);
+	return ;
+}
+
+void	ScavTrap::attack(std::string const& target) {
+	if (this->getEnergyPoint() <= 0 || this->getHitPoint() <= 0) {
+		this->printAttackFail();
+		return ;
+	}
+	this->printAttackSucces(target);
+	this->setEnergyPoint(getEnergyPoint() - 1);
 	return ;
 }

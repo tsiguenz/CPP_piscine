@@ -6,26 +6,30 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:18:35 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/28 17:38:43 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:48:59 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
 
+#define DEFAULT_HIT_POINT 100
+#define DEFAULT_ENERGY_POINT 100
+#define DEFAULT_ATTACK_DAMAGE 30
+
 FragTrap::FragTrap(void) {
 	std::cout << "FragTrap default constructor" << std::endl;
-	this->setHitPoint(100);
-	this->setEnergyPoint(100);
-	this->setAttackDamage(30);
+	this->setHitPoint(DEFAULT_HIT_POINT);
+	this->setEnergyPoint(DEFAULT_ENERGY_POINT);
+	this->setAttackDamage(DEFAULT_ATTACK_DAMAGE);
 	return ;
 }
 
 FragTrap::FragTrap(std::string const& name) {
 	std::cout << "FragTrap constructor by name" << std::endl;
 	this->setName(name);
-	this->setHitPoint(100);
-	this->setEnergyPoint(100);
-	this->setAttackDamage(30);
+	this->setHitPoint(DEFAULT_HIT_POINT);
+	this->setEnergyPoint(DEFAULT_ENERGY_POINT);
+	this->setAttackDamage(DEFAULT_ATTACK_DAMAGE);
 	return ;
 }
 
@@ -55,11 +59,33 @@ void	FragTrap::highFivesGuys(void) {
 }
 
 void	FragTrap::setDefaultHitPoint(void) {
-	this->setHitPoint(100);
+	this->setHitPoint(DEFAULT_HIT_POINT);
 	return ;
 }
 
 void	FragTrap::setDefaultAttackDamage(void) {
-	this->setAttackDamage(30);
+	this->setAttackDamage(DEFAULT_ATTACK_DAMAGE);
+	return ;
+}
+
+void	FragTrap::attack(std::string const& target) {
+	if (this->getEnergyPoint() <= 0 || this->getHitPoint() <= 0) {
+		this->printAttackFail();
+		return ;
+	}
+	this->printAttackSucces(target);
+	this->setEnergyPoint(getEnergyPoint() - 1);
+	return ;
+}
+
+void	FragTrap::printAttackSucces(std::string const target) const {
+	std::cout 	<< "FragTrap " << this->getName() << " attacks " << target
+				<< " causing " << this->getAttackDamage() << " point of damage"
+				<< std::endl;
+}
+
+void	FragTrap::printAttackFail(void) const {
+	std::cout 	<< "FragTrap " << this->getName() << " can't attack, he is dead"
+				<< std::endl;
 	return ;
 }

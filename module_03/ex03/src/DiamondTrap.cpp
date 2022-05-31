@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/26 16:51:32 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/28 17:40:06 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/05/31 11:34:35 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,8 @@ DiamondTrap&	DiamondTrap::operator=(DiamondTrap const& diamondtrap) {
 void	DiamondTrap::whoAmi(void) const {
 	std::cout << "ClapTrap::getName = " << this->getName() << std::endl;
 	std::cout << "DiamondTrap name = " << this->name_ << std::endl;
+}
+
+void	DiamondTrap::attack(std::string const& target) {
+	this->ScavTrap::attack(target);
 }
