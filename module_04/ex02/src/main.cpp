@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:47:05 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 11:58:05 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:09:53 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 int	main(void) {
 	std::cout << "-----Constructors :-----" << std::endl << std::endl;
-	//Animal	a;// uncomment to make crash
+//	AAnimal	a;// uncomment to make crash
 // Subject
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
@@ -31,13 +31,13 @@ int	main(void) {
 // Dog instances
 	Dog	d1;
 	Dog	d2;
-	d1.setIdea(0, "I want to eat meal");
+	d1.setIdea(0, "I want to eat meat");
 	d2 = d1;
 	Dog	d3(d1);
 // Cat instances
 	Cat	c1;
 	Cat	c2;
-	c1.setIdea(0, "I want kill my human");
+	c1.setIdea(0, "I want to kill my human");
 	c2 = c1;
 	Cat	c3(c1);
 	std::cout << std::endl << "-----My tests :-----" << std::endl << std::endl;

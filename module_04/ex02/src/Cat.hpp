@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 11:57:43 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/01 13:32:51 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include "AAnimal.hpp"
+# include "Brain.hpp"
 
 class Cat: public AAnimal {
 

@@ -6,11 +6,11 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/06/01 11:57:10 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/06/01 13:28:35 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = burn
+NAME = abstract
 
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98

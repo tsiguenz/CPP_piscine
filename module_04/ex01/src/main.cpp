@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:47:05 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 11:50:36 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/01 14:10:08 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(void) {
 // Dog instances
 	Dog	d1;
 	Dog	d2;
-	d1.setIdea(0, "I want to eat meal");
+	d1.setIdea(0, "I want to eat meat");
 	d2 = d1;
 	Dog	d3(d1);
 // Cat instances
