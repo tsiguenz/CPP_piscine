@@ -1,0 +1,6 @@
+interface
+obj
+*.swp
+tags
+*.d
+*.depend
