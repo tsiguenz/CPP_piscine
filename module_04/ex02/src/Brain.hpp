@@ -1,36 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 08:54:29 by tsiguenz         ###   ########.fr       */
+/*   Created: 2022/05/31 16:51:32 by tsiguenz          #+#    #+#             */
+/*   Updated: 2022/05/31 18:27:21 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
 
-class Dog: public Animal {
+class Brain {
 
 public:
-	Dog(void);
-	Dog(Dog const& dog);
-	virtual ~Dog(void);
-	Dog& operator=(Dog const& dog);
-	void	makeSound(void) const;
-	void	setIdea(int index, std::string const& idea);
+	Brain(void);
+	Brain(Brain const& brain);
+	virtual ~Brain(void);
+	Brain& operator=(Brain const& brain);
 	std::string	getIdea(int index) const;
+	void	setIdea(int index, std::string const& idea);
 
 private:
-	Brain*	brain_;
+	std::string	ideas_[100];
 
 };
 
-#endif // DOG_HPP
+#endif // BRAIN_HPP

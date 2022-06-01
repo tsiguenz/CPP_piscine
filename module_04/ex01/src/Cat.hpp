@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/31 16:08:10 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/01 08:56:42 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,11 @@ public:
 	virtual ~Cat(void);
 	Cat& operator=(Cat const& cat);
 	void	makeSound(void) const;
+	void	setIdea(int index, std::string const& idea);
+	std::string	getIdea(int index) const;
 
 private:
+	Brain*	brain_;
 
 };
 

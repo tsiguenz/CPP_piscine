@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 08:54:29 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/01 11:57:35 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,9 @@
 # define DOG_HPP
 
 # include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+# include "AAnimal.hpp"
 
-class Dog: public Animal {
+class Dog: public AAnimal {
 
 public:
 	Dog(void);
