@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 11:39:04 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:05:20 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat(void) {
 	std::cout << "Cat default constructor" << std::endl;
-	this->type = std::string("Cat");
+	this->type = "Cat";
 	this->brain_ = new Brain();
 	return ;
 }
@@ -44,11 +44,8 @@ void	Cat::makeSound(void) const {
 }
 
 void	Cat::setIdea(int index, std::string const& idea) {
-	if (index >= 100 || index < 0) {
-		std::cerr << "Index not in range of brain (0 -> 99)" << std::endl;
-		return ;
-	}
 	this->brain_->setIdea(index, idea);
+	return ;
 }
 
 std::string	Cat::getIdea(int index) const {

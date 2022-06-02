@@ -6,14 +6,14 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:50:33 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 11:56:22 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:04:42 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 #include "Dog.hpp"
 
-AAnimal::AAnimal(void): type(std::string("Undefined")){
+AAnimal::AAnimal(void): type("Undefined"){
 	std::cout << "AAnimal default constructor" << std::endl;
 	return ;
 }

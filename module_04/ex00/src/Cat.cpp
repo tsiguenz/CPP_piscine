@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/31 16:08:29 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:43:07 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Cat::Cat(void) {
 	std::cout << "Cat default constructor" << std::endl;
-	this->type = std::string("Cat");
+	this->type = "Cat";
 	return ;
 }
 

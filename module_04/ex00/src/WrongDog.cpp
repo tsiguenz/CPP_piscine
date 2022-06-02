@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/05/31 16:07:19 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:45:12 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 WrongDog::WrongDog(void) {
 	std::cout << "WrongDog default constructor" << std::endl;
-	this->type = std::string("WrongDog");
+	this->type = "WrongDog";
 	return ;
 }
 

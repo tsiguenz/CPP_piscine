@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:57:09 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 11:39:15 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 15:02:23 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Dog::Dog(void) {
 	std::cout << "Dog default constructor" << std::endl;
-	this->type = std::string("Dog");
+	this->type = "Dog";
 	this->brain_ = new Brain();
 	return ;
 }
@@ -44,11 +44,8 @@ void	Dog::makeSound(void) const {
 }
 
 void	Dog::setIdea(int index, std::string const& idea) {
-	if (index >= 100 || index < 0) {
-		std::cerr << "Index not in range of brain (0 -> 99)" << std::endl;
-		return ;
-	}
 	this->brain_->setIdea(index, idea);
+	return ;
 }
 
 std::string	Dog::getIdea(int index) const {
