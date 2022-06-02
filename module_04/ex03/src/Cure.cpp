@@ -6,19 +6,18 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:19:01 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 18:41:35 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 09:31:49 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cure.hpp"
 
-Cure::Cure(void) {
-	this->type = "cure";
+Cure::Cure(void): AMateria("cure") {
 	return ;
 }
 
-Cure::Cure(Cure const& cure) {
-	*this = cure;
+Cure::Cure(Cure const& cure): AMateria("cure") {
+	(void) cure;
 	return ;
 }
 
@@ -27,12 +26,12 @@ Cure::~Cure(void) {
 }
 
 Cure&	Cure::operator=(Cure const& cure) {
-	this->type = cure.type;
+	(void) cure;
 	return *this;
 }
 
 AMateria*	Cure::clone(void)const {
-	return (new Cure(*this));
+	return (new Cure());
 }
 void	Cure::use(ICharacter& target) {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;

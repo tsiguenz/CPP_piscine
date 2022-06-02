@@ -6,18 +6,17 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:31:07 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 18:01:07 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 12:00:29 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(void) {
-	(void) inventory_;
+Character::Character(void): inventory_(), nbMateria_(0){
 	return ;
 }
 
-Character::Character(std::string const& name) {
+Character::Character(std::string const& name): inventory_(), nbMateria_(0) {
 	this->name_ = name;
 	return ;
 }
@@ -28,11 +27,16 @@ Character::Character(Character const& character) {
 }
 
 Character::~Character(void) {
+	for (int i = 0; i < 4; i++)
+		delete this->inventory_[i];
 	return ;
 }
 
 Character&	Character::operator=(Character const& character) {
 	this->name_ = character.name_;
+	for (int i = 0; i < 4; i++)
+		this->inventory_[i] = character.inventory_[i]->clone();
+	this->nbMateria_ = character.nbMateria_;
 	return *this;
 }
 
@@ -41,16 +45,33 @@ std::string const&	Character::getName(void) const {
 }
 
 void	Character::equip(AMateria* m) {
-	(void) m;
+	if (m == NULL || this->nbMateria_ == 4) {
+		std::cerr << "Can't equip new materia, inventory is full" << std::endl;
+		delete m;
+		return ;
+	}
+	for (int i = 0; i < 4; i++) {
+		if (this->inventory_[i] == NULL) {
+			this->inventory_[i] = m;
+			break ;
+		}
+	}
+	this->nbMateria_++;
 	return ;
 }
 void	Character::unequip(int idx) {
-	(void) idx;
+	if (idx < 0 || idx >= 4 || this->nbMateria_ == 0)
+		return ;
+	this->inventory_[idx] = NULL;
+	this->nbMateria_--;
 	return ;
 }
 
 void	Character::use(int idx, ICharacter& target) {
-	(void) idx;
-	(void) target;
+	if (idx < 0 || idx > 4 || this->inventory_[idx] == NULL) {
+		std::cerr << "Can't use, there is no materia at this index" << std::endl;
+		return ;
+	}
+	this->inventory_[idx]->use(target);
 	return ;
 }

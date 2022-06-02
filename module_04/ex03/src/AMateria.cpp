@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:03:45 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 18:19:46 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 09:35:12 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,7 @@ AMateria::AMateria(void) {
 	return ;
 }
 
-AMateria::AMateria(std::string const& type) {
-	this->type = type;
+AMateria::AMateria(std::string const& type): type(type) {
 	return ;
 }
 
@@ -31,7 +30,7 @@ AMateria::~AMateria(void) {
 }
 
 AMateria&	AMateria::operator=(AMateria const& amateria) {
-	this->type = amateria.type;
+	(void) amateria;
 	return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:31:07 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/01 17:59:48 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 11:01:24 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,7 @@ class Character: public ICharacter {
 	private:
 		std::string	name_;
 		AMateria*	inventory_[4];
+		int			nbMateria_;
 };
 
 #endif // CHARACTER_HPP
