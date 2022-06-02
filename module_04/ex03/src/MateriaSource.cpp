@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:52:16 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/02 10:52:30 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 13:51:27 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,10 @@ AMateria*	MateriaSource::getMateria(int index) const {
 }
 
 void		MateriaSource::learnMateria(AMateria* materia) {
+	if (materia == NULL) {
+		std::cerr << "Can't learn materia, materia is NULL" << std::endl;
+		return ;
+	}
 	if (this->nbMateria_ == 4) {
 		std::cerr << "Can't learn materia, MateriaSource is full" << std::endl;
 		delete materia;

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:47:05 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/02 11:55:32 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:18:05 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,12 @@
 int	main(void) {
 	// Instanciacion
 	ICharacter*	c = new Character("toto");
+	ICharacter*	c1 = new Character("tata");
 	AMateria*	mcure = new Cure();
 	AMateria*	mcure2 = mcure->clone();
 	AMateria*	mice = new Ice();
 	AMateria*	mice2 = mice->clone();
+	AMateria*	mtest = NULL;
 
 	IMateriaSource*	msrc = new MateriaSource();
 	AMateria*	temp;
@@ -44,6 +46,7 @@ int	main(void) {
 
 	std::cout << "Create materia without learn materia :" << std::endl;
 	msrc->createMateria("cure");
+	msrc->learnMateria(mtest);
 	msrc->learnMateria(new Ice());
 	msrc->learnMateria(new Cure());
 	msrc->learnMateria(new Cure());
@@ -58,16 +61,37 @@ int	main(void) {
 
 	std::cout << std::endl << "----- Character tests : -----" << std::endl << std::endl;
 
-	std::cout << "Try to use without materia and equip 5 materias :" << std::endl;
+	std::cout << "Try to use/unequip without materia and equip 5 materias :" << std::endl;
+	c->unequip(1);
 	c->use(0, *c);
+	c->equip(mtest);
 	c->equip(new Ice());
 	c->equip(new Cure());
 	c->equip(new Ice());
 	c->equip(new Ice());
 	c->equip(new Ice());
+	c1->equip(new Cure());
+	std::cout << "Use the assignment operator : " << std::endl;
+	std::cout << "Before :" << std::endl;
+	std::cout << "c : " << std::endl;
 	c->use(0, *c);
+	c->use(1, *c);
+	std::cout << "c1 : " << std::endl;
+	c1->use(0, *c);
+	c1->use(1, *c);
+	*((Character*) c1) = *((Character*) c);
+	std::cout << "After :" << std::endl;
+	std::cout << "c : " << std::endl;
+	c->use(0, *c);
+	c->use(1, *c);
+	std::cout << "c1 : " << std::endl;
+	c1->use(0, *c);
+	c1->use(1, *c);
+
+
 	delete temp;
 	delete c;
+	delete c1;
 	delete mcure;
 	delete mcure2;
 	delete mice;

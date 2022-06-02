@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:19:01 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/02 09:31:49 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:04:36 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ Cure&	Cure::operator=(Cure const& cure) {
 AMateria*	Cure::clone(void)const {
 	return (new Cure());
 }
+
 void	Cure::use(ICharacter& target) {
 	std::cout << "* heals " << target.getName() << "'s wounds *" << std::endl;
 	return ;

@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:31:07 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/02 12:00:29 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:00:38 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,17 @@ Character::Character(Character const& character) {
 }
 
 Character::~Character(void) {
-	for (int i = 0; i < 4; i++)
-		delete this->inventory_[i];
-	return ;
+	if (this->nbMateria_ > 0) {
+		for (int i = 0; i < 4; i++)
+			delete this->inventory_[i];
+	}
 }
 
 Character&	Character::operator=(Character const& character) {
+	if (this->nbMateria_ > 0) {
+		for (int i = 0; i < 4; i++)
+			delete this->inventory_[i];
+	}
 	this->name_ = character.name_;
 	for (int i = 0; i < 4; i++)
 		this->inventory_[i] = character.inventory_[i]->clone();
@@ -45,7 +50,11 @@ std::string const&	Character::getName(void) const {
 }
 
 void	Character::equip(AMateria* m) {
-	if (m == NULL || this->nbMateria_ == 4) {
+	if (m == NULL) {
+		std::cerr << "Can't equip materia, materia is NULL" << std::endl;
+		return ;
+	}
+	if (this->nbMateria_ == 4) {
 		std::cerr << "Can't equip new materia, inventory is full" << std::endl;
 		delete m;
 		return ;
@@ -60,8 +69,10 @@ void	Character::equip(AMateria* m) {
 	return ;
 }
 void	Character::unequip(int idx) {
-	if (idx < 0 || idx >= 4 || this->nbMateria_ == 0)
+	if (idx < 0 || idx >= 4 || this->nbMateria_ == 0) {
+		std::cerr << "Can't unequip, there is no materia at this index" << std::endl;
 		return ;
+	}
 	this->inventory_[idx] = NULL;
 	this->nbMateria_--;
 	return ;

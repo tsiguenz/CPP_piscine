@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:03:45 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/02 09:35:12 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/02 14:17:56 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,5 @@ std::string const&	AMateria::getType(void) const {
 
 void	AMateria::use(ICharacter& target) {
 	(void) target;
-	std::cout << "Can't use an AMateria" << std::endl;
 	return ;
 }
