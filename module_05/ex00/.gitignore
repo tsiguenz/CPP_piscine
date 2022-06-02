@@ -1,0 +1,6 @@
+bureaucrat
+obj
+*.swp
+tags
+*.d
+*.depend
