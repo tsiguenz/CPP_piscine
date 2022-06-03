@@ -1,0 +1,6 @@
+maggots
+obj
+*.swp
+tags
+*.d
+*.depend

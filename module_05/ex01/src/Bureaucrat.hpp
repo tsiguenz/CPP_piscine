@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 18:22:49 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/03 10:34:01 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/03 11:12:49 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,9 @@
 
 # include <iostream>
 # include <ostream>
+# include "Form.hpp"
+
+class Form;
 
 class Bureaucrat {
 	public:
@@ -26,6 +29,7 @@ class Bureaucrat {
 		int			getGrade() const;
 		void		upGrade();
 		void		downGrade();
+		void		signForm(Form& form);
 
 	private:
 		Bureaucrat(void);
