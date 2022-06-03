@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:47:05 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/02 15:07:08 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/03 09:43:13 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(void) {
 	const AAnimal* i = new Cat();
 	AAnimal*	zoo[4];
 	for (int i = 0; i < 4; i++) {
-		if (i < 5)
+		if (i < 2)
 			zoo[i] = new Dog();
 		else
 			zoo[i] = new Cat();
