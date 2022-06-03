@@ -1,0 +1,6 @@
+need
+obj
+*.swp
+tags
+*.d
+*.depend
