@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/06/02 18:25:40 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/06/03 09:41:52 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ SRC_PATH = src/
 OBJ_PATH = obj/
 INC = -Iinc
 
-SRC_NAME = main.cpp Bureaucrat.cpp
+SRC_NAME = main.cpp Bureaucrat.cpp GradeTooLowException.cpp GradeTooHighException.cpp
 
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 
