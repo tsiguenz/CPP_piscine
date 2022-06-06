@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:20:45 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/03 14:09:52 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/06 13:46:32 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,11 +18,11 @@ Form::Form(void): name_(), isSigned_(), gradeForSign_(), gradeForExec_() {
 
 Form::Form(std::string name, int gradeForSign, int gradeForExec)
 : name_(name), gradeForSign_(gradeForSign), gradeForExec_(gradeForExec) {
+	this->isSigned_ = false;
 	if (this->gradeForSign_ < 1 || this->gradeForExec_ < 1)
 		throw Form::GradeTooHighException();
 	if (this->gradeForSign_ > 150 || this->gradeForExec_ > 150)
 		throw Form::GradeTooLowException();
-	this->isSigned_ = false;
 	return ;
 }
 
