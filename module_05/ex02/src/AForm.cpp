@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:20:45 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/03 17:57:14 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/06 10:17:08 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,16 +69,12 @@ void	AForm::beSigned(Bureaucrat const& bureaucrat) {
 	return ;
 }
 
-bool	AForm::canExecute(Bureaucrat const& bureaucrat) const {
-	if (this->getGradeForExec() < bureaucrat.getGrade()) {
-		throw AForm::GradeTooLowException();
-		return (false);
-	}
-	if (this->getIsigned() == false) {
+void	AForm::canExecute(Bureaucrat const& bureaucrat) const {
+	if (this->getIsigned() == false)
 		throw AForm::FormIsNotSignedException();
-		return (false);
-	}
-	return (true);
+	if (this->getGradeForExec() < bureaucrat.getGrade())
+		throw AForm::GradeTooLowException();
+	return ;
 }
 
 std::ostream& operator<<(std::ostream& os, AForm const& aform) {

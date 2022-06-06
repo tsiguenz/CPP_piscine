@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:38:38 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/06 11:11:52 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:20:52 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PRESIDENTIALPARDONFORM_HPP
-# define PRESIDENTIALPARDONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 # include <iostream>
 # include "AForm.hpp"
 
-class PresidentialPardonForm: public AForm {
+class RobotomyRequestForm: public AForm {
 	public:
-		PresidentialPardonForm(std::string name);
-		PresidentialPardonForm(PresidentialPardonForm const& presidentialPardonForm);
-		virtual ~PresidentialPardonForm();
-		PresidentialPardonForm& operator=(PresidentialPardonForm const& presidentialPardonForm);
+		RobotomyRequestForm(std::string name);
+		RobotomyRequestForm(RobotomyRequestForm const& robotomyRequestForm);
+		virtual ~RobotomyRequestForm();
+		RobotomyRequestForm& operator=(RobotomyRequestForm const& robotomyRequestForm);
 		void	execute(Bureaucrat const& bureaucrat) const;
 
 	private:
-		PresidentialPardonForm();
+		RobotomyRequestForm();
 	};
 
-#endif // PRESIDENTIALPARDONFORM_HPP
+#endif // ROBOTOMYREQUESTFORM_HPP

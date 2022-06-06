@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 10:20:45 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/03 18:00:11 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/06 10:15:49 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ class AForm {
 		bool	   		getIsigned() const;
 		int		   		getGradeForSign() const;
 		int		   		getGradeForExec() const;
-		bool	   		canExecute(Bureaucrat const& bureaucrat) const;
+		void	   		canExecute(Bureaucrat const& bureaucrat) const;
 
 	private:
 		AForm& operator=(AForm const& aform);

@@ -1,43 +1,48 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 14:38:38 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/06 11:12:09 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/06 11:21:23 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm() {
+RobotomyRequestForm::RobotomyRequestForm() {
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(std::string name): AForm(name, 25, 5) {
+RobotomyRequestForm::RobotomyRequestForm(std::string name): AForm(name, 72, 45) {
 	return ;
 }
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const& form)
+RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const& form)
 : AForm(form.getName(), form.getGradeForSign() \
 , form.getGradeForExec()) {
 	return ;
 }
 
-PresidentialPardonForm::~PresidentialPardonForm() {
+RobotomyRequestForm::~RobotomyRequestForm() {
 	return ;
 }
 
-PresidentialPardonForm&	PresidentialPardonForm::operator=(PresidentialPardonForm const& presidentialPardonForm) {
-	(void) presidentialPardonForm;
+RobotomyRequestForm&	RobotomyRequestForm::operator=(RobotomyRequestForm const& robotomyRequestForm) {
+	(void) robotomyRequestForm;
 	return *this;
 }
 
-void	PresidentialPardonForm::execute(Bureaucrat const& bureaucrat) const {
+void	RobotomyRequestForm::execute(Bureaucrat const& bureaucrat) const {
+	static bool	canRobotomize = true;
+
 	this->canExecute(bureaucrat);
-	std::cout	<< bureaucrat.getName() << " has been pardoned by Zaphod Beeblerox" 
-					<< std::endl;
+	if (canRobotomize == true)
+		std::cout << bureaucrat.getName() << " has been robotomized successfully" << std::endl;
+	else
+		std::cout << bureaucrat.getName() << " robotomization fail..." << std::endl;
+	canRobotomize = !canRobotomize;
 	return ;
 }

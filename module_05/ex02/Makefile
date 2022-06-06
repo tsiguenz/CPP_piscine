@@ -6,7 +6,7 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/06/03 15:48:16 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/06/06 11:10:17 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ OBJ_PATH = obj/
 INC = -Iinc
 
 SRC_NAME = 	main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp \
-			CustomExceptions.cpp
+			ShrubberyCreationForm.cpp RobotomyRequestForm.cpp CustomExceptions.cpp
 OBJ_NAME = $(SRC_NAME:.cpp=.o)
 
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
