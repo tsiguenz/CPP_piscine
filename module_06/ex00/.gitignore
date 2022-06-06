@@ -1,0 +1,6 @@
+scalar
+obj
+*.swp
+tags
+*.d
+*.depend

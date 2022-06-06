@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 11:55:55 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/06 12:30:30 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/06 18:21:27 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,8 @@ AForm* Intern::makeForm(std::string const& type, std::string const& name) const 
 	if (nbType != -1) {
 		std::cout << "Intern creates " << name << std::endl;
 		switch (nbType) {
-			case 0: return (new RobotomyRequestForm(name));
-			case 1: return (new ShrubberyCreationForm(name));
+			case 0: return (new ShrubberyCreationForm(name));
+			case 1: return (new RobotomyRequestForm(name));
 			case 2: return (new PresidentialPardonForm(name));
 		}
 	}
