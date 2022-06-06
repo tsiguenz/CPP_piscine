@@ -1,0 +1,7 @@
+coffee
+obj
+*.swp
+tags
+*.d
+*.depend
+*_shrubbery
