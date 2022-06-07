@@ -1,0 +1,6 @@
+identify
+obj
+*.swp
+tags
+*.d
+*.depend

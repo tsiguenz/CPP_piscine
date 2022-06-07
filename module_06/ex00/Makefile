@@ -6,14 +6,14 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/06/07 14:10:34 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/06/07 21:33:55 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = scalar
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98 -Wconversion
+FLAGS = -Wall -Wextra -Werror -std=c++98
 
 SRC_PATH = src/
 OBJ_PATH = obj/
