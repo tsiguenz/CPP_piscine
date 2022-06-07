@@ -1,0 +1,6 @@
+serialization
+obj
+*.swp
+tags
+*.d
+*.depend
