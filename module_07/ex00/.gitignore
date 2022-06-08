@@ -1,0 +1,6 @@
+start
+obj
+*.swp
+tags
+*.d
+*.depend
