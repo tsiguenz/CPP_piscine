@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/07 09:35:53 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/07 20:11:01 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/08 09:20:44 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ void	printNumbers(double nb) {
 }
 
 bool	isChar(std::string str) {
-	return str.size() == 1 && std::isalpha(str.at(0))? true : false;
+	return str.size() == 1 && std::isprint(str.at(0))? true : false;
 }
 
 bool	isInt(std::string str) {
@@ -105,7 +105,7 @@ bool	isFloat(std::string str) {
 	if (str.at(0) == '.' || str.find('.') > str.size() || str.find('f') > str.size())
 		return false;
 	f = strtof(str.c_str(), &endP);
-	if (errno != 0 || endP[0] != 'f' || endP[-1] == '.')
+	if (errno != 0 || endP[0] != 'f' || endP[-1] == '.' || endP[1] != '\0')
 		return false;
 	return true;
 }
