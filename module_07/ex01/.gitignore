@@ -1,0 +1,6 @@
+iter
+obj
+*.swp
+tags
+*.d
+*.depend
