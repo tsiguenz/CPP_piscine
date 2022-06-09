@@ -6,14 +6,14 @@
 #    By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/09 17:55:43 by tsiguenz          #+#    #+#              #
-#    Updated: 2022/06/08 18:32:06 by tsiguenz         ###   ########.fr        #
+#    Updated: 2022/06/09 09:12:22 by tsiguenz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = array
 
 CC = c++
-FLAGS = -Wall -Wextra -Werror -std=c++98
+FLAGS = -Wall -Wextra -Werror -std=c++98 -g3
 
 SRC_PATH = src/
 OBJ_PATH = obj/
