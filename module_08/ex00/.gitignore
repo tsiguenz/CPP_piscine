@@ -1,0 +1,6 @@
+find
+obj
+*.swp
+tags
+*.d
+*.depend
