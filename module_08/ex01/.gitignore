@@ -1,0 +1,6 @@
+span
+obj
+*.swp
+tags
+*.d
+*.depend
