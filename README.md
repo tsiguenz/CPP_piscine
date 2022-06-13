@@ -2,7 +2,7 @@
 07 validated with 90%<BR>
 <BR>
 Module 00 :<BR>
-Firsts steps in c++.<BR><BR>
+First steps in c++.<BR><BR>
 Module 01 :<BR>
 Dynamic memory and reference.<BR><BR>
 Module 02 :<BR>
