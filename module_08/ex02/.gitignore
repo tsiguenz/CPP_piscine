@@ -1,0 +1,6 @@
+abomination
+obj
+*.swp
+tags
+*.d
+*.depend
