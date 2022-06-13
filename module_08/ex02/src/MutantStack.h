@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:14:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/13 15:16:38 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:44:42 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,7 @@ template <typename T>
 class MutantStack: public std::stack<T> {
 	public:
 		typedef typename std::deque<T>::iterator	iterator;
-		typedef typename std::deque<T>::const_iterator	const_iterator;
 		typedef typename std::deque<T>::reverse_iterator	reverse_iterator;
-		typedef typename std::deque<T>::const_reverse_iterator	const_reverse_iterator;
 		MutantStack(): std::stack<T>() { };
 		MutantStack(MutantStack<T> const& mutantStack) { *this = mutantStack; }
 		~MutantStack() { };
