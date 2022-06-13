@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 11:14:46 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/13 13:57:30 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:16:38 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,12 +33,8 @@ class MutantStack: public std::stack<T> {
 		}
 		iterator	begin() { return this->c.begin(); }
 		iterator	end() { return this->c.end(); }
-		const_iterator	cbegin() { return this->c.cbegin(); }
-		const_iterator	cend() { return this->c.cend(); }
 		reverse_iterator	rbegin() { return this->c.rbegin(); }
 		reverse_iterator	rend() { return this->c.rend(); }
-		const_reverse_iterator	crbegin() { return this->c.crbegin(); }
-		const_reverse_iterator	crend() { return this->c.crend(); }
 };
 
 #endif // MUTANT_STACK_H

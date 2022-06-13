@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/31 14:47:05 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/09 16:43:07 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:21:20 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,11 @@ int	main() {
 		for (int i = 0; i < 10; i++) {
 			v.push_back(i * 10) ;
 		}
+		const std::list<int>	cv(v.begin(), v.end());
 		for (std::list<int>::iterator it = v.begin(); it != v.end(); it++) {
 			std::cout << *it << std::endl;
 		}
-		std::cout << "easyFind(50) = " << *easyFind(v, 50) << std::endl;
+		std::cout << "easyFind(50) = " << *easyFind(cv, 50) << std::endl;
 	}
 	return (0);
 }

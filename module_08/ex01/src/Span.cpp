@@ -6,7 +6,7 @@
 /*   By: tsiguenz <tsiguenz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/09 16:47:38 by tsiguenz          #+#    #+#             */
-/*   Updated: 2022/06/09 18:57:30 by tsiguenz         ###   ########.fr       */
+/*   Updated: 2022/06/13 15:33:37 by tsiguenz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,7 @@ int	Span::longestSpan() {
 }
 
 void	Span::addRange(VIIterator begin, VIIterator end) {
-	for (; begin != end; begin++)
-		this->addNumber(*begin);
+	this->tab_.insert(this->tab_.end(), begin, end);
+//	for (; begin != end; begin++)
+//		this->addNumber(*begin);
 }
